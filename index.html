@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Hangi Gün Değil</title>
+        <link rel="shortcut icon" href="icon.png"
+        <link rel="stylesheet" href="stlye.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <style>
+            *{
+                user-select: none;
+            }
+        p {
+            font-size: 35px;
+            text-align: center;
+            padding-top: 20px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 1s;
+         }
+         body{
+             background: #ecf0f1;
+             text-align: center;
+        }
+         img{
+             margin-top: 20px;
+             background-color: #fff;
+             border-radius: 20px;
+             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+         }
+        input{
+            background-color: white;
+            padding:2px 5px ;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            font-size: 25px;
+            outline: none;
+            border: 2px black solid ;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        }
+        input:hover{
+            transform: scale(1.1);
+        }
+        input:focus{
+            background: green;
+        }
+
+        </style>
+    </head>
+    <body>
+          <img src="icon.png">
+          <p id="text">Değil</p>
+          <input type="button" value="Yenile" onclick="document.location.reload(true);">
+          <script>
+		   var day = notDay = new Date().getDay();
+		   while(day == notDay){
+		   notDay = Math.floor(Math.random() * 7);
+	     	}
+		var days = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+		document.getElementById("text").innerHTML = days[notDay] + " Değil.";
+          </script>
+    </body>
+</html>
